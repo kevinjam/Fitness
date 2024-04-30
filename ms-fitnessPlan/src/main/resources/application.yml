@@ -1,0 +1,42 @@
+
+spring:
+    application:
+        name: ms-fitness-plan
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        hikari:
+            maximum-pool-size: 20
+        initialize: true
+        password: postgres
+        url: jdbc:postgresql://localhost:5432/fitness_db?
+        username: postgres
+    flyway:
+        baseline-on-migrate: true
+        enabled: true
+        installed-by: Kevin Janvier Chinabalire
+        locations: classpath:/db/migration,/db/data
+        out-of-order: true
+
+    jpa:
+        open-in-view: false
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                jdbc:
+                    batch_size: 5
+                order_inserts: true
+                order_updates: true
+                query:
+                    in_clause_parameter_padding: true
+        show-sql: true
+    main:
+        allow-circular-references: true
+    graphql:
+        graphiql:
+            enabled: true
+            path: /graphql
+
+    config:
+        import: configserver:http://localhost:9296
+server:
+    port: 8082

@@ -1,0 +1,12 @@
+server:
+    port: 8761
+eureka:
+    instance:
+        hostname: localhost
+    client:
+        fetch-registry: false
+        register-with-eureka: false
+spring:
+    cloud:
+        compatibility-verifier:
+            enabled: false #for spring boot compatibility
