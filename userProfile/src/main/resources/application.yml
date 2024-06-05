@@ -3,13 +3,7 @@ spring:
         name: MS-PROFILE
     config:
         import: configserver:http://localhost:9296
-    flyway:
-        baseline-on-migrate: true
-        enabled: true
-        installed-by: Kevin Janvier Chinabalire
-        locations: classpath:/db/migration
-        out-of-order: true
-        baseline-description: user
+
 server:
     port: 8081
 
